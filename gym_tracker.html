@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Gym Tracker</title>
+  <style type="text/css">
+    .summary{border: 1px solid #000; width: 10%;
+               padding: 10px; }
+  </style>
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+          type="text/javascript"></script>
+  <script src="gym_tracker.js" type="text/javascript"></script> -->
+
+</head>
+
+<body>
+
+Sets :   <input onblur="sfindTotal()", "avgSets()" type="text" name="sets"
+                id="sets"/><br>
+Reps :   <input onblur="rfindTotal()" type="text" name="reps" id="reps"/><br>
+Weight : <input onblur="wfindTotal()" type="text" name="weight" id="weight"/><br>
+
+<br><br>
+Sets Total :   <input type="text" name="stotal" id="stotal"/>
+Reps Total :   <input type="text" name="rtotal" id="rtotal"/>
+Weight Total : <input type="text" name="wtotal" id="wtotal"/>
+Avg Sets :     <input type="text" name="SetsAverage" id="SetsAverage"/>
+
+
+    <script type="text/javascript">
+function sfindTotal(){
+    var arr = document.getElementsByName("sets");
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+    document.getElementById('stotal').value = tot;
+}
+
+
+function avgSets() {
+    var arr = document.getElementsByName('sets');
+    var tot =0;
+    for (var i =0; i <arr.length; i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+  }
+  document.getElementById('SetsAverage').value = tot;
+}
+
+
+
+function rfindTotal(){
+    var arr = document.getElementsByName('reps');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+    document.getElementById('rtotal').value = tot;
+}
+
+function wfindTotal(){
+    var arr = document.getElementsByName('weight');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+    document.getElementById('wtotal').value = tot;
+}
+    </script>
+  <!--<div>
+    <form class="summary">
+      Sets:<br />
+        <input type="number" name="sets" id="bestset" value="input">
+      Reps:<br />
+        <input type="number" name="reps" id="bestrep" value="input">
+      Weight:<br />
+        <input type="number" name="weight" id="bestweight">
+    </form>
+  </div>
+  <div>
+    <form action="updated.html">
+      <button id="update">Update</button>
+    </form>
+  </div>-->
+
+
+
+</body>
+
+</html>
+
+    <!--<fieldset>
+      <legend>Gym Records</legend>
+      Sets:<br>
+      <input type="number" name="sets" value=" " id="bestset" ><br>
+      Reps:<br>
+      <input type="number" name="reps" value=" " id="bestrep"><br>
+      Weight:<br>
+      <input type="number" name="weight" value=" " id="bestweight"><br><br>
+      <button id="update">Update</button
+    </fieldset>
+  </form>
+
+
+
+
+
+  <div>
+    <textarea class="num" name="sets" maxlength="2" id="bestset"
+              oninput="best()"></textarea>
+    <textarea class="num" name="sets" maxlength="2" id="avgset"
+              oninput="average()"/></textarea>
+    <textarea class="num" name="reps" maxlength="2" id="bestrep"
+              oninput="best()"/></textarea>
+    <textarea class="num" name="reps" maxlength="2" id="avgrep"
+              oninput="average()"/></textarea>
+    <textarea class="num" name="weight" maxlength="3" id="bestweight"
+              oninput="best()"/></textarea>
+    <textarea class="num" name="weight" maxlength="3" id="avgweight"
+              oninput="average()"/></textarea>
+
+  </div> -->
