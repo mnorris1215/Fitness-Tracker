@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gym Tracker</title>
+</head>
+
+<body>
+  <div>
+    Your input should appear below: <br />
+    <input type="number" name="input" id="sets"/>
+    <button type="button" onclick="insert()" id="submit">Submit</button>
+  </div>
+  <p id="showbox"></p>
+
+  <script type="text/javascript">
+
+//finally fucking works!! Insert() function displays input in array
+    var userinput = document.getElementById("sets");
+    var allnum = [];
+    document.getElementById("showbox").innerHTML = allnum;
+    function insert(){
+      allnum.push(userinput.value);
+      document.getElementById('showbox').innerHTML = allnum;
+    }
+
+  </script>
+
+</body>
+
+</html>
