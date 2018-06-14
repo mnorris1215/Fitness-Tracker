@@ -1,0 +1,19 @@
+
+body {
+  background-color: #6666ff;
+
+}
+
+h1{
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  font-style: italic;
+
+}
+
+#showbox, #total, #explain{
+  color: white;
+  text-align: center;
+  font-size: 22px;
+}
