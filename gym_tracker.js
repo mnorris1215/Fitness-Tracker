@@ -1,58 +1,76 @@
-//This is to track weight, set, and rep averages for strength training.
-//Should also come with a feature to subtract mistakes
-
-
-//First attempt to add numbers to a variable, and then the variable to an array
-//variables would then be incremented with new user input.
-
-/*var allnum = [];
-var numset = parseInt (document.getElementById('bestset').value);
-var +numrep = document.getElementById('bestrep').innerHTML;
-var +numweight = document.getElementById('bestweight').innerHTML;
-allnum.push(numset);
-alert(allnum);
-
-
-function best(){
-  var max = allnum.reduce(function(a,b){
-    return Math.max(a,b);
-    document.write(max);
-  });
-
+//finally fucking works!! Insert() function displays input in array
+//array contains the output and is displayed in the <p> "showbox"
+var setuserinput = document.getElementById("sets");
+var setsarray = [];
+document.getElementById("setshowbox").innerHTML = setsarray;
+function setinsert(){
+  setsarray.push(setuserinput.value);
+  document.getElementById('setshowbox').innerHTML = setsarray;
 }
-best();
 
-function average(){
-  var range = allnum.reduce(function(a,b){
-    return a + b;
-  }) / allnum.length;
-  document.write(range);
+//Step 2: Find the highest number in the array and display in
+//total
+var setcurrentLargest = 0;
+document.getElementById('settotal').innerHTML = setcurrentLargest;
+function sethighest(){
+  setsarray.sort(function(a,b){return b-a});
+  setcurrentLargest = parseInt(setsarray[0]);
+  document.getElementById('settotal').innerHTML = setcurrentLargest;
 }
-average();*/
 
+//Step 3: Find the Average and display in avgbox
+var setaverage = 0;
+document.getElementById('setavgbox').innerHTML = setaverage;
+function setrange(){
+  var tot = 0;
+  for (var i = 0; i<setsarray.length; i++){
+    tot += parseInt(setsarray[i]);
+  }
+  setrawavg = tot/setsarray.length;
+  //rounds up to 2 decimals
+  setaverage = Math.round(setrawavg * 100)/100;
+  document.getElementById('setavgbox').innerHTML = setaverage;
+}
 
-//Second Attempt: Separate sets, reps, and weight into unique input boxes with
-//ids. Then have JS display the current weight, new weight, and difference.
+// //Repeat for Reps
+var repuserinput = document.getElementById("reps");
+var repsarray = [];
+document.getElementById("repshowbox").innerHTML = repsarray;
+function repinsert(){
+  repsarray.push(repuserinput.value);
+  document.getElementById('repshowbox').innerHTML = repsarray;
+}
 
+var repcurrentLargest = 0;
+document.getElementById('reptotal').innerHTML = repcurrentLargest;
+function rephighest(){
+  repsarray.sort(function(a,b){return b-a});
+  repcurrentLargest = parseInt(repsarray[0]);
+  document.getElementById('reptotal').innerHTML = repcurrentLargest;
+}
 
-/*$(document).ready(function () {
-  $("#update").click(function(event) {
-    event.preventDefault();
+var repaverage = 0;
+document.getElementById('repavgbox').innerHTML = repaverage;
+function reprange(){
+  var tot = 0;
+  for (var i = 0; i<repsarray.length; i++){
+    tot += parseInt(repsarray[i]);
+  }
+  reprawavg = tot/repsarray.length;
+  //rounds up to 2 decimals
+  repaverage = Math.round(reprawavg * 100)/100;
+  document.getElementById('repavgbox').innerHTML = repaverage;
+}
 
-  $("#bestset").attr("value", function() {
-    var curvalue = parseInt($("#bestset").html("input")),
-      newvalue += curvalue;
-    return newvalue;
-
-  $("#bestrep").attr("value", function() {
-    var curvalue = parseInt($("#bestrep").html(input)),
-      newvalue += curvalue;
-    return newvalue;
-
-  });
-  });
-});
-var allset = [];
-var setcount = allset.length;*/
-
-//Third Attempt:
+//create one function to run the rest of the functions. This serves
+//to create only one value for onClick.
+function setmain(){
+  setinsert();
+  sethighest();
+  setrange();
+}
+function repmain() {
+  repinsert();
+  rephighest();
+  reprange();
+}

@@ -5,9 +5,11 @@
   <meta charset="utf-8">
   <title>Gym Tracker</title>
   <link type="text/css" href="simple_gym.css" rel="stylesheet" />
+
 </head>
 
 <body>
+
   <h1>Track Your Routine</h1>
   <br />
   <br />
@@ -15,46 +17,34 @@
     <div id="explain">
       Your input should appear below: <br />
       <br />
+      Enter Sets Here:
       <input type="number" name="input" id="sets"/>
-      <button type="button" onclick="main()" id="submit">Submit</button><br />
+      <button type="button" onclick="setmain()" id="setsubmit">Submit</button><br />
+        </br />
+      Enter Reps Here:
+      <input type="number" name="input" id="reps"/>
+      <button type="button" onclick="repmain()" id="repsubmit">Submit</button><br />
       <hr />
     </div>
 
-  <p id="total"></p>
-  <p id="showbox"></p>
-  <script type="text/javascript">
+    <div id="Setsall">
+      Best Set:
+      <p id="settotal"> </p>
+      Average Sets:
+      <p id="setavgbox"></p>
+      Total Sets:
+      <p id="setshowbox"></p>
+    </div>
 
-//finally fucking works!! Insert() function displays input in array
-//array contains the output and is displayed in the <p> "showbox"
-    var userinput = document.getElementById("sets");
-    var allnum = [];
-    document.getElementById("showbox").innerHTML = allnum;
-    function insert(){
-      allnum.push(userinput.value);
-      document.getElementById('showbox').innerHTML = allnum;
-    }
-
-//Step 2: Find the highest number in the array and display in
-//total
-    var currentLargest = 0;
-    document.getElementById('total').innerHTML = currentLargest;
-    function highest(){
-      allnum.sort(function(a,b){return b-a});
-      currentLargest = parseInt(allnum[0]);
-      document.getElementById('total').innerHTML = currentLargest;
-    }
-    //create one function to run the rest of the functions. This serves
-    //to create only one value for onClick.
-    function main(){
-      insert();
-      highest();
-    }
-
-
-
-
-  </script>
-
+    <div id="Repsall">
+      Best Rep:
+      <p id="reptotal"> </p>
+      Average Rep:
+      <p id="repavgbox"></p>
+      Total Reps:
+      <p id="repshowbox"></p>
+    </div>
+  <script type="text/javascript" src="gym_tracker.js"></script>
 </body>
 
 </html>
