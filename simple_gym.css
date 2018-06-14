@@ -1,6 +1,7 @@
 
 body {
   background-color: #6666ff;
+  height: 100%;
 
 }
 
@@ -12,8 +13,22 @@ h1{
 
 }
 
-#explain, #Setsall, #Repsall{
+#explain{
   color: white;
   text-align: center;
   font-size: 22px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.column {
+  -moz-column-count: 3;
+  -moz-column-gap: 1em;
+  -moz-column-rule: 1px solid silver;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 1em;
+  -webkit-column-rule: 1px solid silver;
+  color: white
 }

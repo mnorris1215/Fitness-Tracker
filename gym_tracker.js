@@ -62,6 +62,36 @@ function reprange(){
   document.getElementById('repavgbox').innerHTML = repaverage;
 }
 
+//Repeat for weight
+var weightuserinput = document.getElementById("weight");
+var weightarray = [];
+document.getElementById("weightshowbox").innerHTML = weightarray;
+function weightinsert(){
+  weightarray.push(weightuserinput.value);
+  document.getElementById('weightshowbox').innerHTML = weightarray;
+}
+
+var weightcurrentLargest = 0;
+document.getElementById('weighttotal').innerHTML = weightcurrentLargest;
+function weighthighest(){
+  weightarray.sort(function(a,b){return b-a});
+  weightcurrentLargest = parseInt(weightarray[0]);
+  document.getElementById('weighttotal').innerHTML = weightcurrentLargest;
+}
+
+var weightaverage = 0;
+document.getElementById('weightavgbox').innerHTML = weightaverage;
+function weightrange(){
+  var tot = 0;
+  for (var i = 0; i<weightarray.length; i++){
+    tot += parseInt(weightarray[i]);
+  }
+  weightrawavg = tot/weightarray.length;
+  //rounds up to 2 decimals
+  weightaverage = Math.round(weightrawavg * 100)/100;
+  document.getElementById('weightavgbox').innerHTML = weightaverage;
+}
+
 //create one function to run the rest of the functions. This serves
 //to create only one value for onClick.
 function setmain(){
@@ -73,4 +103,9 @@ function repmain() {
   repinsert();
   rephighest();
   reprange();
+}
+function weightmain() {
+  weightinsert();
+  weighthighest();
+  weightrange();
 }
