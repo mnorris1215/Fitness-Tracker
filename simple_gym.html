@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gym Tracker</title>
+  <link type="text/css" href="simple_gym.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div id="container">
+    <a href="landing.html" id="homebutton">Homepage</a>
+    <h1>Track Your Routine</h1>
+    <br />
+    <br />
+  </div>
+
+    <div id="explain">
+      It's important to keep track of a healthy gym regime to visualize progress.<br />
+      <br />
+      Enter Sets Here:
+      <input type="number" name="input" id="sets"/>
+      <button type="button" onclick="setmain()" id="setsubmit">Submit</button><br />
+        </br />
+      Enter Reps Here:
+      <input type="number" name="input" id="reps"/>
+      <button type="button" onclick="repmain()" id="repsubmit">Submit</button><br />
+        </br />
+      Enter Weight Here:
+      <input type="number" name="input" id="weight"/>
+      <button type="button" onclick="weightmain()" id="weightsubmit">Submit</button><br />
+      <hr />
+    </div>
+
+    <div class="column">
+      <h3>Best Set:</h3>
+      <p id="settotal"> </p>
+      <h3>Average Sets:</h3>
+      <p id="setavgbox"></p>
+      <h3>Total Sets:</h3>
+      <p id="setshowbox"></p>
+    </div>
+
+    <div class="column">
+      <h3>Best Rep:</h3>
+      <p id="reptotal"> </p>
+      <h3>Average Rep:</h3>
+      <p id="repavgbox"></p>
+      <h3>Total Reps:</h3>
+      <p id="repshowbox"></p>
+    </div>
+
+    <div class="column">
+      <h3>Best Weight:</h3>
+      <p id="weighttotal"> </p>
+      <h3>Average Weight:</h3>
+      <p id="weightavgbox"></p>
+      <h3>Total Weight:</h3>
+      <p id="weightshowbox"></p>
+    </div>
+
+  <script type="text/javascript" src="gym_tracker.js"></script>
+</body>
+
+</html>
